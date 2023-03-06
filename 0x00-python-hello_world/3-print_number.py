@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 number = 98
 str = "Battery street"
-print("{} {}".format(number, str))
+print(f"{number} Battery street", end='\n')
