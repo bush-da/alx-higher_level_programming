@@ -16,7 +16,6 @@ int check_cycle(listint_t *list)
 		return (0);
 	}
 
-	travel = travel->next;
 	while (travel)
 	{
 		if (travel == flag)
