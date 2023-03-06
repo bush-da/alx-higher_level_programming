@@ -6,7 +6,6 @@
  * Return: 0 if doesn't have cycle, 1 if it have
  */
 
-
 int check_cycle(listint_t *list)
 {
 	listint_t *flag = list;
@@ -14,15 +13,16 @@ int check_cycle(listint_t *list)
 
 	if (!flag)
 	{
-		return 0;
+		return (0);
 	}
 
 	travel = travel->next;
 	while (travel)
 	{
 		if (travel == flag)
-			return 1;
+			return (1);
 		travel = travel->next;
 	}
-	return 0;
+
+	return (0);
 }
