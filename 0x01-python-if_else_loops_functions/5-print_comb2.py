@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-for i in range(10):
-    for x in range(10):
-        if i == 9 and x == 9:
-            print("{}{}".format(i, x))
-            break;
-        print("{}{}, ".format(i, x), end="")
+for i in range(100):
+    if i <= 9:
+        print("{}{}".format(0,i), end=", ")
+    else:
+        if i == 99:
+            print("{}".format(i))
+        else:
+            print("{}".format(i), end=", ")
