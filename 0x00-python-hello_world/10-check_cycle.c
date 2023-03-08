@@ -8,18 +8,17 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *flag = list;
-	listint_t *travel = list;
+	listint_t *rabbit;
+	listint_t *turtle;
 
-	if (!flag)
-	{
-		return (0);
-	}
+	rabbit = list;
+	turtle = list;
 
-	while (travel)
+	while (rabbit != NULL && turtle != NULL && turtle->next != NULL)
 	{
-		travel = travel->next;
-		if (travel == flag)
+		turtle = turtle->next;
+		rabbit = rabbit->next->next;
+		if (turtle == rabbit)
 			return (1);
 	}
 
