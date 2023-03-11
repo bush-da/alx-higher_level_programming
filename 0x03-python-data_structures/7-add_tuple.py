@@ -22,5 +22,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
     for i in range(len(tmp_list)):
         tmp_list[i] += tmp_list2[i]
 
-
-    return tuple(tmp_list)
+    tmp_list = tuple(tmp_list)
+    return tmp_list
