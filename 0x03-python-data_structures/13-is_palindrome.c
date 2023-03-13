@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 	listint_t *ch1 = *head;
 	listint_t *ch2 = *head;
 	listint_t *counter = *head;
-	unsigned int count, middle, checker, middle2;
+	int count, middle, checker, middle2;
 
 	count = 0;
 	checker = 0;
