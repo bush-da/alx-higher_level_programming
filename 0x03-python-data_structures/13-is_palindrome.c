@@ -13,7 +13,7 @@ int is_palindrome(listint_t **head)
 
 	listint_t *ch1 = *head;
 	listint_t *counter = *head;
-	int count, checker, middle;
+	unsigned int count, checker, middle;
 
 	count = 0;
 	checker = 0;
@@ -23,7 +23,7 @@ int is_palindrome(listint_t **head)
 		counter = counter->next;
 	}
 
-	int arr[count];
+	unsigned int arr[count];
 
 	middle = count / 2;
 
