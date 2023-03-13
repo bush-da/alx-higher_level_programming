@@ -17,15 +17,16 @@ int is_palindrome(listint_t **head)
 
 	count = 0;
 	checker = 0;
-	while (counter->next != NULL)
+	while (counter != NULL)
 	{
 		count++;
 		counter = counter->next;
 	}
 
-	unsigned int arr[count + 1];
+	unsigned int arr[count];
+	count--;
 
-	middle = count / 2;
+	middle = (count) / 2;
 
 	while (ch1 != NULL)
 	{
