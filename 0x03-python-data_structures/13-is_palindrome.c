@@ -18,6 +18,7 @@ int is_palindrome(listint_t **head)
 
 	count = 0;
 	checker = 0;
+
 	while (counter->next != NULL)
 	{
 		count++;
@@ -32,7 +33,9 @@ int is_palindrome(listint_t **head)
 		checker++;
 		ch2 = ch2->next;
 	}
+
 	checker = 0;
+
 	while (ch2 != NULL)
 	{
 		while (checker < middle)
@@ -49,7 +52,9 @@ int is_palindrome(listint_t **head)
 			ch1 = *head;
 		}
 		else
+		{
 			return 0;
+		}
 	}
 
 	return 1;
