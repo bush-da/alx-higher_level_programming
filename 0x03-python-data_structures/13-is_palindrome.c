@@ -8,13 +8,13 @@
 
 int is_palindrome(listint_t **head)
 {
-	if (!*head)
-		return 1;
-
 	listint_t *ch1 = *head;
 	listint_t *ch2 = *head;
 	listint_t *counter = *head;
 	int count, middle, checker, middle2;
+
+	if (!*head)
+		return 1;
 
 	count = 0;
 	checker = 0;
