@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 	listint_t *checker = *head;
 	listint_t *traveler = *head;
 
-	if (*head == NULL)
+	if (!*head)
 		return 1;
 
 	start = checker->n;
