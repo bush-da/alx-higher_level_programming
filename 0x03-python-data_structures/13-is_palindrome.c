@@ -22,7 +22,6 @@ int is_palindrome(listint_t **head)
 		count++;
 		counter = counter->next;
 	}
-	printf("size = %d\n", count);
 
 	int arr[count + 1];
 
