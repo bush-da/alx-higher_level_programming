@@ -8,7 +8,7 @@
 
 int is_palindrome(listint_t **head)
 {
-	unsigned int count, check, middle, middle2, start, end;
+	unsigned int count, check, middle, middle2, start, end, half;
 	listint_t *checker = *head;
 	listint_t *traveler = *head;
 
@@ -23,52 +23,27 @@ int is_palindrome(listint_t **head)
 		count++;
 		traveler = traveler->next;
 	}
+	half = count / 2;
 
-	if (count % 2 != 0)
+	while (check < half)
 	{
-		while (check < (count / 2))
-		{
-			check++;
-			checker = checker->next;
-		}
+		check++;
+		checker = checker->next;
+	}
 
-		middle = checker->n;
-		middle2 = checker->next->n;
-		if (middle == middle2)
-		{
-			while (checker->next != NULL)
-				checker = checker->next;
-			end = checker->n;
-			if (start == end)
-				return 1;
-			else
-				return 0;
-		}
+	middle = checker->n;
+	middle2 = checker->next->n;
+	if (middle == middle2)
+	{
+		while (checker->next != NULL)
+			checker = checker->next;
+		end = checker->n;
+		if (start == end)
+			return 1;
 		else
 			return 0;
 	}
 	else
-	{
-		while (check < ((count / 2) - 1))
-		{
-			check++;
-			checker = checker->next;
-		}
-
-		middle = checker->n;
-		middle2 = checker->next->n;
-		if (middle == middle2)
-		{
-			while (checker->next != NULL)
-				checker = checker->next;
-			end = checker->n;
-			if (start == end)
-				return 1;
-			else
-				return 0;
-		}
-		else
-			return 0;
-	}
+		return 0;
 	return 0;
 }
