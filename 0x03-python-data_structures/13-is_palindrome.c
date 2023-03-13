@@ -8,53 +8,41 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *ch1 = *head;
-	listint_t *ch2 = *head;
-	listint_t *counter = *head;
-	int count, middle, checker, middle2;
-
 	if (!*head)
 		return 1;
 
+	listint_t *ch1 = *head;
+	listint_t *counter = *head;
+	int count, checker, middle;
+
 	count = 0;
 	checker = 0;
-
 	while (counter->next != NULL)
 	{
 		count++;
 		counter = counter->next;
 	}
 
+	int arr[count];
 	middle = count / 2;
-	middle2 = middle;
 
-	while (checker <= middle2)
+	while (checker <= count)
 	{
+		arr[checker] = ch1->n;
 		checker++;
-		ch2 = ch2->next;
+		ch1 = ch1->next;
 	}
-
 	checker = 0;
-
-	while (ch2 != NULL)
+	int sizee = sizeof(arr) / sizeof(arr[0]);
+	while (checker <= sizee && middle <= count)
 	{
-		while (checker < middle)
+		if (arr[checker] == arr[count])
 		{
+			count--;
 			checker++;
-			ch1 = ch1->next;
-		}
-
-		if (ch2->n == ch1->n)
-		{
-			middle--;
-			checker = 0;
-			ch2 = ch2->next;
-			ch1 = *head;
 		}
 		else
-		{
 			return 0;
-		}
 	}
 
 	return 1;
