@@ -24,6 +24,7 @@ int is_palindrome(listint_t **head)
 	}
 
 	int arr[count];
+
 	middle = count / 2;
 
 	while (checker <= count)
@@ -33,8 +34,8 @@ int is_palindrome(listint_t **head)
 		ch1 = ch1->next;
 	}
 	checker = 0;
-	int sizee = sizeof(arr) / sizeof(arr[0]);
-	while (checker <= sizee && middle <= count)
+
+	while (checker <= middle && middle <= count)
 	{
 		if (arr[checker] == arr[count])
 		{
