@@ -23,6 +23,8 @@ int is_palindrome(listint_t **head)
 		count++;
 		traveler = traveler->next;
 	}
+	traveler = *head;
+	traveler = traveler->next;
 
 	half = count / 2;
 
@@ -38,11 +40,14 @@ int is_palindrome(listint_t **head)
 
 	if (middle == middle2)
 	{
-		while (checker->next != NULL)
+		while (checker->next->next != NULL)
 			checker = checker->next;
-		end = checker->n;
+		end = checker->next->n;
 		if (start == end)
-			return 1;
+		{
+			if (checker->n == traveler->n)
+				return 1;
+		}
 		else
 			return 0;
 	}
