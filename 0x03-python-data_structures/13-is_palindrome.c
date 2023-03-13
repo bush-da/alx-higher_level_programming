@@ -1,60 +1,56 @@
 #include "lists.h"
 
 /**
- * is_palindrome - checks the linked list if its palindrome or not
- * @head: pointer to head node
- * Return: 1 if it is a palindrome 0 if it is not
+ * is_palindrome - checks if the linked list is palindrome or not
+ * @head: address of head node
+ * Return: 1 if linked list is palindrome 0 if it is not
  */
 
 int is_palindrome(listint_t **head)
 {
-	unsigned int count, check, middle, middle2, start, end, half;
-	listint_t *checker = *head;
-	listint_t *traveler = *head;
-
 	if (!*head)
 		return 1;
 
-	start = checker->n;
+	listint_t *ch1 = *head;
+	listint_t *ch2 = *head;
+	listint_t *counter = *head;
+	unsigned int count, middle, checker, middle2;
+
 	count = 0;
-	check = 0;
-	while (traveler->next != NULL)
+	checker = 0;
+	while (counter->next != NULL)
 	{
 		count++;
-		traveler = traveler->next;
-	}
-	traveler = *head;
-	traveler = traveler->next;
-
-	half = count / 2;
-
-	while (check < half)
-	{
-		check++;
-		checker = checker->next;
+		counter = counter->next;
 	}
 
-	middle = checker->n;
-	checker = checker->next;
-	middle2 = checker->n;
+	middle = count / 2;
+	middle2 = middle;
 
-	if (middle == middle2)
+	while (checker <= middle2)
 	{
-		while (checker->next->next != NULL)
-			checker = checker->next;
-		end = checker->next->n;
-		if (start == end)
+		checker++;
+		ch2 = ch2->next;
+	}
+	checker = 0;
+	while (ch2 != NULL)
+	{
+		while (checker < middle)
 		{
-			if (checker->n == traveler->n)
-				return 1;
+			checker++;
+			ch1 = ch1->next;
+		}
+
+		if (ch2->n == ch1->n)
+		{
+			middle--;
+			checker = 0;
+			ch2 = ch2->next;
+			ch1 = *head;
 		}
 		else
 			return 0;
 	}
-	else
-	{
-		return 0;
-	}
 
-	return 0;
+	return 1;
 }
