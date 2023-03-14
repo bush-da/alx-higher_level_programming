@@ -24,7 +24,6 @@ int is_palindrome(listint_t **head)
 		count++;
 		counter = counter->next;
 	}
-	printf("counter = %d\n", count);
 
 	middle = (count) / 2;
 
