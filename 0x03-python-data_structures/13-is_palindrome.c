@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdio.h>
 /**
  * is_palindrome - checks if the linked list is palindrome or not
  * @head: address of head node
@@ -24,14 +24,27 @@ int is_palindrome(listint_t **head)
 		count++;
 		counter = counter->next;
 	}
+	printf("counter = %d\n", count);
 
-	middle = count / 2;
+	middle = (count) / 2;
+
 	middle2 = middle;
 
-	while (checker <= middle2)
+	if (count % 2 == 0)
 	{
-		checker++;
-		ch2 = ch2->next;
+		while (checker < middle2)
+		{
+			checker++;
+			ch2 = ch2->next;
+		}
+	}
+	else
+	{
+		while (checker <= middle2)
+		{
+			checker++;
+			ch2 = ch2->next;
+		}
 	}
 
 	checker = 0;
