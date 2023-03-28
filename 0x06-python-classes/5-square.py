@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import sys
+
 """Define a class Square"""
 
 
@@ -39,7 +39,7 @@ class Square:
         """print the square with the character #"""
         for i in range(self.__size):
             for j in range(self.__size):
-                sys.stdout.write('#')
+                print("#", end="")
             print("")
         if self.__size == 0:
             print("")
