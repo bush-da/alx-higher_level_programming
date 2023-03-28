@@ -25,6 +25,7 @@ class Square:
 
     @property
     def size(self):
+        """Get/set current size"""
         return (self.__size)
 
     @size.setter
@@ -38,18 +39,23 @@ class Square:
 
     @property
     def position(self):
+        """Get/set current positon"""
         return (self.__position)
 
     @position.setter
     def position(self, value):
-        if (len(value) != 2 or not isinstance(value, tuple)
-            or not all(isinstance(i, int) for i in value)
-            or not all(i >= 0 for i in value)):
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(i, int) for i in value)
+                or not all(i >= 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def my_print(self):
         """print the square with the character #"""
+        if self.__size == 0:
+            print("")
+            return
 
         for i in range(self.__position[1]):
             print("")
@@ -59,6 +65,4 @@ class Square:
                 print(" ", end="")
             for j in range(self.__size):
                 print("#", end="")
-            print("")
-        if self.__size == 0:
             print("")
