@@ -39,6 +39,7 @@ class Square:
     @property
     def position(self):
         return (self.__position)
+
     @position.setter
     def position(self, value):
         if (len(value) != 2 or not isinstance(value, tuple)
@@ -52,6 +53,7 @@ class Square:
 
         for i in range(self.__position[1]):
             print("")
+
         for i in range(self.__size):
             for k in range(self.__position[0]):
                 print(" ", end="")
