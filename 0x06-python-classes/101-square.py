@@ -70,10 +70,6 @@ class Square:
 
         """print the square with the character #"""
 
-        if self.__size == 0:
-            print("")
-            return
-
         if self.__size != 0:
             [print("") for i in range(0, self.__position[1])]
 
