@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines singly linked list"""
 
+
 class Node:
     """Defines a node of a signly linked list"""
 
@@ -17,6 +18,7 @@ class Node:
 
     @property
     def data(self):
+        """Get/setter for node data"""
         return (self.__data)
 
     @data.setter
@@ -27,6 +29,7 @@ class Node:
 
     @property
     def next_node(self):
+        """Get/Setter for next node in linked list"""
         return (self.__next_node)
 
     @next_node.setter
@@ -35,12 +38,20 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
+
 class SinglyLinkedList:
 
     def __init__(self):
+        """Initilize singly likend list"""
         self.__head = None
 
     def sorted_insert(self, value):
+        """sort signly linked list
+
+        args:
+            value(int): data of a node
+
+        """
 
         new_node = Node(value)
         if (self.__head is None):
@@ -51,12 +62,14 @@ class SinglyLinkedList:
             self.__head = new_node
         else:
             n = self.__head
-            while (n.next_node is not None and n.next_node.data < new_node.data):
+            while (n.next_node is not None
+                   and n.next_node.data < new_node.data):
                 n = n.next_node
             new_node.next_node = n.next_node
             n.next_node = new_node
 
     def __str__(self):
+        """funtion to output linked list data when instance of class called"""
         ret = []
         temp = self.__head
         while (temp is not None):
