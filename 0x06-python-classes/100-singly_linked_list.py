@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Defines singly linked list"""
+"""Defines classes for a singly linked list"""
 
 
 class Node:
-    """Defines a node of a signly linked list"""
+    """Defines a node for linked list"""
 
     def __init__(self, data, next_node=None):
         """Initialize a node
@@ -40,6 +40,7 @@ class Node:
 
 
 class SinglyLinkedList:
+    """singly linked list class"""
 
     def __init__(self):
         """Initilize singly likend list"""
