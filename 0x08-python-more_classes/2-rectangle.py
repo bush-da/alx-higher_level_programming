@@ -23,7 +23,7 @@ class Rectangle:
 
     def perimeter(self):
         """ return the perimeter of the rectangle"""
-        return ((self.__width * 2) + (self.__height * 2))
+        return (self.__width * 2 + self.__height * 2)
 
     @property
     def width(self):
