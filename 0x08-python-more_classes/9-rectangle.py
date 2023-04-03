@@ -95,6 +95,8 @@ class Rectangle:
         Args:
             rect_1: instance of Rectangle class
             rect_2: instance of Rectangle class
+        Raises:
+              TypeError: if rect_1 or rect_2 is not instance of Rectangle class
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
