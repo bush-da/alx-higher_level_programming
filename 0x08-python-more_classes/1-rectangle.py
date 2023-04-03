@@ -6,11 +6,11 @@ class Rectangle:
 
     """ Class represent rectangle """
 
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """ initialize width and height of rectangle"""
 
-        self.__width = width
         self.__height = height
+        self.__width = width
 
     """getter/setter for width of the rectangle"""
     @property
