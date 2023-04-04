@@ -16,9 +16,9 @@ class Rectangle:
             width(int): accept the width of rectangle
             height(int): accept the height of rectangle
         """
-
-        self.height = height
         self.width = width
+        self.height = height
+
         Rectangle.number_of_instances += 1
 
     def area(self):
