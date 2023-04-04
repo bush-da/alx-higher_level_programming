@@ -71,7 +71,7 @@ Non-Numbers
 	TypeError: a must be an integer
 
 
-if both arguments are non-integer or non-float it will raise typeerror
+if both arguments are non-integer or non-float it will raise TypeError
 with a message a must be an integer
 
 ::
@@ -79,3 +79,20 @@ with a message a must be an integer
 	>>> add_integer("hello", "world")
 	Traceback (most recent call last):
 	TypeError: a must be an integer
+
+if infinity is passed to the parameter the function will fall to add
+
+::
+
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+if NaN(Not A Number) is passed to one of the argument it will
+also fail to add the arguments
+
+::
+
+	>>> add_integer(float('NaN'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
