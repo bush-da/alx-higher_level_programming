@@ -13,9 +13,9 @@ class Rectangle:
             width(int): accept the width of rectangle
             height(int): accept the height of rectangle
         """
-
-        self.height = height
         self.width = width
+        self.height = height
+
 
     def area(self):
         """ return area of rectangle """
