@@ -1,0 +1,149 @@
+# 2-matrix_divided.txt
+
+===============================
+ How to Use 2-matrix_divided.py
+===============================
+
+This module have one function called ''matrix_divided(...)''
+
+Numbers
+=======
+
+''matrix_divided()'' returns a new matrix with each of matrix elements
+are divided by the number passed to the second argument
+For numbers the value of each elements in matrix is equivalent to
+using ''/'' operator
+
+::
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> matrix = [
+	...     [1, 2, 3],
+	...     [4, 5, 6]
+	... ]
+	>>> print(matrix_divided(matrix, 3))
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+	>>> matrix = [[]]
+	>>> print(matrix_divided(matrix, 3))
+	[[]]
+
+also works for float number in matrix
+
+::
+
+	>>> matrix = [
+	...     [1.0, 2.0, 3.0],
+	...     [4.0, 5.0, 6.0]
+	... ]
+	>>> print(matrix_divided(matrix, 3))
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+also works for negative numbers in matrix
+
+::
+
+	>>> matrix = [
+	...     [-1.0, 2.0, 3.0],
+	...     [4.0, -5.0, 6.0]
+	... ]
+	>>> print(matrix_divided(matrix, 3))
+	[[-0.33, 0.67, 1.0], [1.33, -1.67, 2.0]]
+
+Differenct size rows
+====================
+
+if matrix rows size if different the function will raise TypeError
+
+::
+
+	>>> matrix = [
+	...     [-1.0, 2.0, 3.0],
+	...     [4.0, -5.0]
+	... ]
+	>>> print(matrix_divided(matrix, 3))
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
+	>>> matrix = [
+	...     [1, 2, 3],
+	...     [4, 5]
+	... ]
+	>>> print(matrix_divided(matrix, 3))
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
+
+Non-Numbers
+===========
+
+matrix must be a list of lists of integers or floats
+otherwise raise a TypeError
+
+::
+
+	>>> matrix = [
+	...     [1, 2, 3],
+	...     [4, 5, "1"]
+	... ]
+	>>> print(matrix_divided(matrix, 3))
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Cases for Denominator(div)
+================
+
+div can’t be equal to 0, otherwise raise a ZeroDivisionError
+
+::
+
+	>>> matrix = [
+	...     [1, 2, 3],
+	...     [4, 5, 6]
+	... ]
+	>>> print(matrix_divided(matrix, 0))
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+even if the elements are not integers or float if the divider is equal to 0
+it will raise ZeroDivisionError
+
+::
+
+	>>> matrix = [
+	...     [1, 2, 3],
+	...     [4, 5, 6]
+	... ]
+	>>> print(matrix_divided(matrix, 0))
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+div(denominator) must be a number (integer or float),
+otherwise raise a TypeError
+
+::
+
+	>>> matrix = [
+	...     [1, 2, 3],
+	...     [4, 5, 6]
+	... ]
+	>>> print(matrix_divided(matrix, "hello"))
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+Invalid Matrices
+================
+
+matrix must contain either integer or floats otherwise
+will raise TypeError
+
+::
+
+	>>> matrix = "hello"
+	>>> print(matrix_divided(matrix, 3))
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+	>>> matrix = []
+	>>> print(matrix_divided(matrix, 3))
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
