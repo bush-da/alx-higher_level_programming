@@ -1,0 +1,55 @@
+# 3-say_my_name.txt
+
+===============================
+ How to Use 3-say_my_name.py
+===============================
+
+This module has one function called ''say_my_name(...)''
+
+Strings
+=======
+
+''say_my_name(...)'' prints full name from the arguments passed
+
+::
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("Daniel", "Tujuma")
+	My name is Daniel Tujuma
+
+If the last name is not provided it will assigned it to empty string
+and prints one space in the place of last name
+
+::
+
+	>>> say_my_name("Daniel")
+	My name is Daniel 
+
+Non String
+==========
+
+If Non String is passed to the parameters will will raise TypeError
+
+::
+
+	>>> say_my_name("Daniel", 2)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+Empty Argument
+==============
+
+If noting is passed to the parameter of function say_my_name(...) it will
+raise TypeError
+
+::
+
+	>>> say_my_name("")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+::
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
