@@ -1,0 +1,68 @@
+# 4-print_square.txt
+
+===============================
+ How to Use 4-print_square.py
+===============================
+
+This module have only one function called
+''print_square(...)''
+
+Numbers
+=======
+
+''print_square(...)'' prints a square in the size of the arguemnt
+passed
+
+::
+
+	>>> print_square = __import__('4-print_square').print_square
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+Non Numbers
+===========
+
+If Non Number is passed to the argument it will raise
+TypeError with a message size must be an integer
+
+::
+
+	>>> print_square('4')
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+
+Float and Negative Numbers
+==========================
+
+If negative number passed to the function it will raise
+ValueError with a message size must be >= 0
+
+::
+	>>> print_square(-3)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+If negative and float number passed it will raise TypeError
+with a message size must be an integer
+
+::
+
+	>>> print_square(-3.14)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+Empty Argument
+==============
+
+If noting is passed to the function it will raise
+TypeError
+
+::
+
+	>>> print_square()
+	Traceback (most recent call last):
+	TypeError: print_square() missing 1 required positional argument: 'size'
