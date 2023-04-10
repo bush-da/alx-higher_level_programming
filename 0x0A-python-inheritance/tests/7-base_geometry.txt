@@ -35,6 +35,15 @@ TypeError
 	>>> bg.integer_validator("name", "john")
 	Traceback (most recent call last):
 	TypeError: name must be an integer
+	>>> bg.integer_validator("width", None)
+	Traceback (most recent call last):
+	TypeError: width must be an integer
+	>>> bg.integer_validator("width")
+	Traceback (most recent call last):
+	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 Zero and Negative Integer
 =========================
