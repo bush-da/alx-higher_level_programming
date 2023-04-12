@@ -12,9 +12,9 @@ if __name__ == "__main__":
     filename = "add_item.json"
     try:
         my_list = load_from_json_file(filename)
-    except:
+    except FileNotFoundError:
         my_list = []
     args = len(sys.argv)
     for i in range(1, args):
-            my_list.append(sys.argv[i])
+        my_list.append(sys.argv[i])
     save_to_json_file(my_list, filename)
