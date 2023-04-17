@@ -77,3 +77,14 @@ class Rectangle(Base):
         if value < 0:
             raise TypeError("y must be >= 0")
         self.__y = value
+
+    def display(self):
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print("#", end="")
+            if (i != self.__height - 1):
+                print("")
+        print("")
+        return ("")
