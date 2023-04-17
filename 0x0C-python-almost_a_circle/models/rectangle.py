@@ -48,6 +48,10 @@ class Rectangle(Base):
             raise TypeError("height must be > 0")
         self.__height = value
 
+    def area(self):
+        """ returns the area of the rectangle"""
+        return (self.width * self.height)
+
     @property
     def x(self):
         """getter/setter for x in rectangle"""
