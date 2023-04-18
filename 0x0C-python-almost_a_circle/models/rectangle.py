@@ -126,7 +126,7 @@ class Rectangle(Base):
                 elif (d == 3):
                     self.x = arg
                 elif (d == 4):
-                    self.x = arg
+                    self.y = arg
                 d += 1
 
     def __str__(self):
