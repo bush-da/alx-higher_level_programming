@@ -9,12 +9,13 @@ class Base:
           __nb_objects (int): The number of instantiated Bases"""
 
     __nb_objects = 0
+
     def __init__(self, id=None):
         """ initialize the base class
         Args:
             id (int): id of the base class created
         """
-        if id != None:
+        if id not None:
             self.id = id
         else:
             Base.__nb_objects += 1
