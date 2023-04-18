@@ -15,6 +15,11 @@ class Rectangle(Base):
             x(int): x coordinate of rectangle
             y(int): y coordinate of rectangle
             id(int): identity of rectangle
+        Raises:
+              TypeError: if width or height is not int
+              ValueError: if width or height <= 0
+              TypeError: if x or y is not int
+              ValueError: if x or y < 0
         """
         self.width = width
         self.height = height
@@ -37,7 +42,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """getter/setter for height of rectangle"""
+        """get/set for height of rectangle"""
         return self.__height
 
     @height.setter
@@ -54,7 +59,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """getter/setter for x in rectangle"""
+        """get/set for x in rectangle"""
         return (self.__x)
 
     @x.setter
@@ -67,7 +72,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """getter/setter for y in rectangle"""
+        """get/set for y in rectangle"""
         return (self.__y)
 
     @x.setter
