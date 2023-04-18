@@ -129,8 +129,8 @@ class Rectangle(Base):
                     self.y = arg
                 d += 1
         else:
-                for key, value in kwargs.items():
-                    setattr(self, key, value)
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def __str__(self):
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
