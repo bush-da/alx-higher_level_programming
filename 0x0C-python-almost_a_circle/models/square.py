@@ -33,23 +33,15 @@ class Square(Rectangle):
         self.width = value
 
     def update(self, *args, **kwargs):
-        if args and len(args) != 0:
-            # d = len(args)
-            # if (d == 1):
-            #     self.id = args[0]
-            # elif (d == 2):
-            #     self.id = args[0]
-            #     self.size = args[1]
-            # elif (d == 3):
-            #     self.id = args[0]
-            #     self.size = args[1]
-            #     self.x = args[2]
-            # elif (d == 4):
-            #     self.id = args[0]
-            #     self.size = args[1]
-            #     self.x = args[2]
-            #     self.y = args[3]
+        """ update square with args and kwargs attribute
 
+        Args:
+            id(int): identity of square
+            size(int): the size of square
+            x(int): x coordinate of square
+            y(int): y coordinate of square
+        """
+        if args and len(args) != 0:
             d = 0
             for arg in args:
                 if d == 0:
