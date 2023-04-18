@@ -79,6 +79,9 @@ class Rectangle(Base):
         self.__y = value
 
     def display(self):
+        """ method that display rectanlge using # by the height and width
+        of rectangle
+        """
         if self.__width == 0 or self.__height == 0:
             return ("")
         for i in range(self.__height):
