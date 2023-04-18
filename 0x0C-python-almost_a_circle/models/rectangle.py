@@ -101,6 +101,34 @@ class Rectangle(Base):
         print("")
         return ("")
 
+    def update(self, *args):
+        """Update the Rectangle by using *args to assign to each attribute
+
+        Args:
+            id(int): identity of rectangle
+            width(int): width of the rectangle
+            height(int): height of the rectangle
+            x(int): x coordinate of the rectangle
+            y(int): y coordinate of the rectangle
+        """
+        if args and len(args) != 0:
+            d = 0
+            for arg in args:
+                if d == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif (d == 1):
+                    self.width = arg
+                elif (d == 2):
+                    self.height = arg
+                elif (d == 3):
+                    self.x = arg
+                elif (d == 4):
+                    self.x = arg
+                d += 1
+
     def __str__(self):
         return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
                                                                  self.x,
