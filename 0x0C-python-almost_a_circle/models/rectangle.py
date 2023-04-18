@@ -75,7 +75,7 @@ class Rectangle(Base):
         """get/set for y in rectangle"""
         return (self.__y)
 
-    @x.setter
+    @y.setter
     def y(self, value):
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
