@@ -6,16 +6,18 @@ class Base:
     """ Represent the base model
 
     Attributes:
-          __nb_objects (int): The number of instantiated Bases"""
+          __nb_objects (int): The number of created object
+    """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ initialize the base class
+        """ initialize the base class objects
+
         Args:
-            id (int): id of the base class created
+            id (int): identity of the each created object
         """
-        if id not None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
