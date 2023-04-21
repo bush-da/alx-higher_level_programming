@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Define class that is base to of all other class """
 import json
+import csv
 
 
 class Base:
@@ -59,7 +60,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """ retusn a instance with all attributes already set
+        """ return a instance with all attributes already set
         Args:
             dictionary(kwargs): can be thought of as a double pointer
             to a dictionary
@@ -79,5 +80,37 @@ class Base:
             with open(f"{cls.__name__}.json", "r") as jsonfile:
                 lists_of_dict = Base.from_json_string(jsonfile.read())
                 return [cls.create(**f) for f in lists_of_dict]
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ serializes CSV file"""
+        with open(f"{cls.__name__}.csv", "w") as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                csv_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for obj in list_objs:
+                    csv_writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ deserializes CSV file"""
+        try:
+            with open(f"{cls.__name__}.csv", "r") as csv_file:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_of_dicts = csv.DictReader(csv_file, fieldnames=fieldnames)
+                list_of_dicts = [dict([key, int(value)]
+                                 for key, value in d.items())
+                                 for d in list_of_dicts]
+                return [cls.create(**d) for d in list_of_dicts]
         except FileNotFoundError:
             return []
