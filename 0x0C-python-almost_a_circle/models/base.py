@@ -40,8 +40,9 @@ class Base:
         Args:
             list_objs(list): a list of instance who inherits of Base class
         """
-        with open(f"{cls.__name__}.json", 'w') as jn:
+        with open(f"{cls.__name__}.json", "w") as jn:
             if list_objs is None:
                 jn.write("[]")
-            dicts = [i.to_dictionary() for i in list_objs]
-            jn.write(Base.to_json_string(dicts))
+            else:
+                dicts = [i.to_dictionary() for i in list_objs]
+                jn.write(Base.to_json_string(dicts))
