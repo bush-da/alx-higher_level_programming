@@ -56,3 +56,17 @@ class Base:
         if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ retusn a instance with all attributes already set
+        Args:
+            dictionary(kwargs): can be thought of as a double pointer
+            to a dictionary
+        """
+        if (cls.__name__ == "Rectangle"):
+            r1 = cls(1, 1)
+        else:
+            r1. cls(1)
+        r1.update(**dictionary)
+        return r1
