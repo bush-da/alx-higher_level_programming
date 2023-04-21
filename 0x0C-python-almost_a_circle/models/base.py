@@ -2,7 +2,7 @@
 """ Define class that is base to of all other class """
 import json
 import csv
-
+import turtle
 
 class Base:
     """ Represent the base model
@@ -114,3 +114,43 @@ class Base:
                 return [cls.create(**d) for d in list_of_dicts]
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw Rectangles and Squares using the turtle module.
+        Args:
+            list_rectangles (list): A list of Rectangle objects to draw.
+            list_squares (list): A list of Square objects to draw.
+        """
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#fcba03")
+        turt.pensize(5)
+        turt.shape("turtle")
+
+        turt.color("#362c10")
+        for rectangle in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rectangle.x, rectangle.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(rectangle.width)
+                turt.left(90)
+                turt.forward(rectangle.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turt.color("#ab3d0a")
+        for square in list_squares:
+            turt.showturtle()
+            turt.up()
+            turt.goto(square.x, square.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(square.width)
+                turt.left(90)
+                turt.forward(square.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turtle.exitonclick()
