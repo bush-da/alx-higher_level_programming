@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Define class that is base to of all other class """
+import json
 
 
 class Base:
@@ -22,3 +23,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """ retuns the JSON string representations """
+        return json.dumps(list_dictionaries)
