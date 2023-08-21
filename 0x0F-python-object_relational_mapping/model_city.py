@@ -12,7 +12,7 @@ class City(Base):
     name (sqlalchemy.String): city name
     state_id (sqlclchemy.Interger): forign key to state.id
     """
-    __tablename__ = 'cities'
+    __tablename__ = "cities"
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = (Integer, ForeignKey("states.id"), nullable=False)
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
