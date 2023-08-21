@@ -9,4 +9,4 @@ if __name__ == "__main__":
                          db=sys.argv[3], port=3306)
     curr = db.cursor()
     curr.execute("SELECT * FROM `states` ORDER BY `id`")
-    [print(state) for state in curr.fetchall() if state[1][0] == 'N']
+    [print(state) for state in curr.fetchall() if state[1][0] == "N"]
