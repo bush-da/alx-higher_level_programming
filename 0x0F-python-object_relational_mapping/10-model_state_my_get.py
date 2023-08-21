@@ -18,5 +18,5 @@ if __name__ == "__main__":
         if (state.name == sys.argv[4]):
             print(state.id)
             flag = True
-    if flag == False:
+    if (not flag):
         print("Not found")
