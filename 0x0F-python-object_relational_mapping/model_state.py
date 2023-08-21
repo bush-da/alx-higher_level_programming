@@ -11,7 +11,7 @@ class State(Base):
     """ Represents a state for a MySQL db
     __tablename__(str): name of table to store states
     id (sqlalchemy.Integer): state id
-    name (sqlalchemy.String(: state name
+    name (sqlalchemy.String): state name
     """
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True)
