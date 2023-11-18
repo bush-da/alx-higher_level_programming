@@ -8,7 +8,7 @@ function fac (a) {
   return a * fac(a - 1);
 }
 if (isNaN(num)) {
-  console.log('NaN');
+  console.log(1);
 } else {
   console.log(fac(num));
 }
