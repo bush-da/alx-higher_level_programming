@@ -10,4 +10,3 @@ if (process.argv.length <= 3) {
   }
   console.log(myarray.sort((a, b) => a - b)[myarray.length - 2]);
 }
-console.log(myarray);
