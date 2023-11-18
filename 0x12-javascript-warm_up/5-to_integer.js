@@ -1,2 +1,3 @@
 #!/usr/bin/node
-console.log(typeof parseInt(process.argv[2]) === 'number' ? `My number: ${parseInt(process.argv[2])}` : 'Not a number');
+const num = parseInt(Number(process.argv[2]))
+console.log(isNaN(num) ? 'Not a number' : `My number: ${num}`)
