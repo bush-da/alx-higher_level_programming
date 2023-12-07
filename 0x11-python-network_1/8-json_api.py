@@ -9,7 +9,7 @@ if __name__ == "__main__":
     payload = {"q": ""}
     if (len(sys.argv) == 2):
         payload["q"] = sys.argv[1]
-    req = requests.get(url, data=payload)
+    req = requests.post(url, data=payload)
     try:
         response = req.json()
         if (response == {}):
