@@ -13,7 +13,7 @@ if __name__ == '__main__':
     name = sys.argv[4]
     db = MySQLdb.connect(host=host, user=user, passwd=passwd, db=db)
     c = db.cursor()
-    c.execute('SELECT * FROM `states` ORDER BY `states`.`id`')
-    [print(state) for state in c.fetchall() if name == state[1]]
+    c.execute("SELECT * FROM `states` WHERE BINARY `name` = '{}'".format(name))
+    [print(state) for state in c.fetchall()]
     c.close()
     db.close()
