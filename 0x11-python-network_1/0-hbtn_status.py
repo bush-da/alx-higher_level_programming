@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" script that fetches https://alx-intranet.hbtn.io/status """
 from urllib.request import Request, urlopen
 
 
