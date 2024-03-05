@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" displays the value of the X-Request-Id variable found in the header of the response. """
+""" displays the value of the X-Request-Id variable
+found in the header of the response. """
 import sys
 from urllib.request import urlopen, Request
 
